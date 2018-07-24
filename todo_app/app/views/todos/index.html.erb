@@ -3,11 +3,15 @@
 
 <table class=table table-well>	
 	<thead>
-<% @todos.each do |todo| %>
-<h1> <%= todo.description %> </h1>
-<p><%=todo.completed%></p>
-
+		<tr>
+			<th>Description</th>
+			<th>Completed</th>
 </thead>
-
+<tbody>
+	<% @todos.each do |todo| %>
+	<h1> <%= todo.description %> </h1>
+	<p><%=todo.completed%></p>
+	<%=link_to 'Show ToDo',todo, :class => 'btn btn-primary' %>
+</tbody>
 <%end%>
 </table>
