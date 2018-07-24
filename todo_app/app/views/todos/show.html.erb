@@ -1,5 +1,6 @@
 <div>
-	<h1><%= @todo.id %></h1>
-	<p><%= @todo.description %> </p>
-	<p><%= @todo.completed %></p>
+	<p>ID:<%= @todo.id %></p>
+	<p>Description:<%= @todo.description %> </p>
+	<p>Completed?:<%= @todo.completed %></p>
+	<%= link_to 'Volver',todos_path,:class => 'btn btn-primary'%>
 </div>

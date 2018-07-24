@@ -13,6 +13,7 @@
 			<th>Completed</th>
 </thead>
 <tbody>
+
 	<% @todos.each do |todo| %>
 	<tr>
 	<td><%= todo.description %></td>
@@ -22,6 +23,7 @@
     <td><%=link_to 'Delete ToDo', { :action => :destroy, :id => todo.id }, :method => :delete, :data => { :confirm => 'Are you sure?'},:class=> 'btn btn-danger' %></td>
     <td><%=link_to 'Completed ToDo',completed_path(todo), :class => 'btn btn-warning' %></td>
 </tr>
+</div>
 </tbody>
 <%end%>
 </table>

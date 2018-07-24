@@ -11,6 +11,7 @@ class TodosController < ApplicationController
 	def create
 		@todo = Todo.new(todo_params)
 		@todo.save
+		@todo.update_attributes(:completed=>false)
 		redirect_to todos_path	
 	end
 
@@ -39,6 +40,11 @@ class TodosController < ApplicationController
 		@todo.update_attributes(:completed=>true)
 		redirect_to todos_path
 	end
+
+	def list
+		@todos = Todo.all
+	end
+
 	private 
 		def todo_params
 			params.require(:todo).permit(:description, :completed)
