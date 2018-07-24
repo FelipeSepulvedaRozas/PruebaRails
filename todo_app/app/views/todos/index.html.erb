@@ -1,5 +1,10 @@
 
-<%= link_to 'Crear ToDo',todos_new_path%>
+
+
+<h1>ToDo List</h1>
+<div>
+<%= link_to 'Crear ToDo',todos_new_path,:class => 'btn btn-dark'%>
+</div>
 
 <table class=table table-well>	
 	<thead>
@@ -12,9 +17,10 @@
 	<tr>
 	<td><%= todo.description %></td>
 	<td><%=todo.completed%></td>
-	<td><%=link_to 'Show ToDo',todo, :class => 'btn btn-primary' %></td>
+	<td><%=link_to 'Show ToDo',todo, :class => 'btn btn-info' %></td>
 	<td><%=link_to 'Edit ToDo',edit_path(todo), :class => 'btn btn-success' %></td>
     <td><%=link_to 'Delete ToDo', { :action => :destroy, :id => todo.id }, :method => :delete, :data => { :confirm => 'Are you sure?'},:class=> 'btn btn-danger' %></td>
+    <td><%=link_to 'Completed ToDo',completed_path(todo), :class => 'btn btn-warning' %></td>
 </tr>
 </tbody>
 <%end%>
