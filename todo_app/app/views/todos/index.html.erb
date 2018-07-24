@@ -9,9 +9,13 @@
 </thead>
 <tbody>
 	<% @todos.each do |todo| %>
-	<h1> <%= todo.description %> </h1>
-	<p><%=todo.completed%></p>
-	<%=link_to 'Show ToDo',todo, :class => 'btn btn-primary' %>
+	<tr>
+	<td><%= todo.description %></td>
+	<td><%=todo.completed%></td>
+	<td><%=link_to 'Show ToDo',todo, :class => 'btn btn-primary' %></td>
+	<td><%=link_to 'Edit ToDo',edit_path(todo), :class => 'btn btn-success' %></td>
+    <td><%=link_to 'Delete ToDo', { :action => :destroy, :id => todo.id }, :method => :delete, :data => { :confirm => 'Are you sure?'},:class=> 'btn btn-danger' %></td>
+</tr>
 </tbody>
 <%end%>
 </table>
