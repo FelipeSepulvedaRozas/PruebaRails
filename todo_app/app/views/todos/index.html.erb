@@ -2,9 +2,6 @@
 
 
 <h1>ToDo List</h1>
-<div>
-<%= link_to 'Crear ToDo',todos_new_path,:class => 'btn btn-dark'%>
-</div>
 
 <table class=table table-well>	
 	<thead>
@@ -16,7 +13,7 @@
 
 	<% @todos.each do |todo| %>
 	<tr>
-	<td><%= todo.description %></td>
+	<td><%=todo.description %></td>
 	<td><%=todo.completed%></td>
 	<td><%=link_to 'Show ToDo',todo, :class => 'btn btn-info' %></td>
 	<td><%=link_to 'Edit ToDo',edit_path(todo), :class => 'btn btn-success' %></td>

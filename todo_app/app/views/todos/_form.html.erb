@@ -1,0 +1,13 @@
+
+<%= form_with model: @todo, local: true do |f|%>
+
+<div class="field" >
+	<%= f.label :decription, "Description" %>
+	<%= f.text_field :description %>
+	</div>
+
+	<div class="field">
+	<%= f.submit "Guardar" %>
+	</div>
+	
+	<%end%>	
